@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
 # Function to determine the optimal number of clusters using Silhouette Score
-def optimal_k(X: np.array, max_k: int = 10, visualize: bool = True):
+def optimal_k(X: pd.DataFrame,max_k: int = 10, visualize: bool = True):
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
     
