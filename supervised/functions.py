@@ -34,7 +34,7 @@ def models_cv(models: dict,X: pd.DataFrame,y: pd.Series,test_size: float = 0.2,
 
     # Train and evaluate models
     for name, model in models.items():
-        if name in ['SVM', 'Neural Network']:
+        if name in ['SVM']:
             model.fit(X_train_scaled, y_train)
             y_pred = model.predict(X_test_scaled)
         else:
@@ -46,7 +46,7 @@ def models_cv(models: dict,X: pd.DataFrame,y: pd.Series,test_size: float = 0.2,
 
     # Cross-validation for model selection - default 5 folds
     for name, model in models.items():
-        if name in ['SVM', 'Neural Network']:
+        if name in ['SVM']:
             scores = cross_val_score(model, X_train_scaled, y_train)
         else:
             scores = cross_val_score(model, X_train, y_train)
